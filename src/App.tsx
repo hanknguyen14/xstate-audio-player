@@ -119,7 +119,7 @@ function App() {
     <div className="audio-player">
       <AudioPlayer
         audioRef={audioRef}
-        track={currentTrack as AudioTrack}
+        track={currentTrack}
         isPlaying={can('PAUSE')}
         onStopClick={sendEvent({ type: 'STOP' })}
         onPlayClick={sendEvent({ type: 'PLAY' })}
@@ -132,7 +132,6 @@ function App() {
           <div
             key={audio.id}
             onClick={() => {
-              console.log(audio.id, index);
               setCurrentTrack(audio);
               send({
                 type: 'SELECT_SONG',
