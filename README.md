@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+# XState Audio Player - An demo audio player using XState
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A mini project to simulate an audio player states using finite state machines and statecharts XState
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+![Statecharts](https://user-images.githubusercontent.com/23608297/221735982-437ddb17-68ff-48ad-8a04-f0465227e429.png)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clone the project
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+  git clone git@github.com:hanknguyen14/xstate-audio-player.git
+```
 
-### `npm test`
+Go to the project directory
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+  cd xstate-audio-player
+```
 
-### `npm run build`
+Install the packages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+  npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Run start application
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+  npm start
+```
 
-### `npm run eject`
+## Visualizer
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Enabled development tool
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```ts
+  // App.tsx
+  import { inspect } from '@xstate/inspect';
+  //...
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  inspect({
+    iframe: false,
+  });
+  //...
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  const [state, send] = useMachine(appMachine, {
+    //...
+    devTools: true,
+  });
+```
 
-## Learn More
+Run start application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+A visualizer inspect window will be opened with the application
+
+![Visualizer](https://user-images.githubusercontent.com/23608297/221743054-6627281e-8151-486e-9543-a5c6c66183be.png)
+
+## Demo
+
+[Demo site](https://xstate-demo.netlify.app "XState Audio Player")
+
+## Badges
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
+## Feedback
+
+If you have any feedback, please reach out to me at hungnguyen.dhg@gmail.com
